@@ -1,0 +1,16 @@
+@echo off
+:: Manual Setup
+SET RAYLIB_PATH=C:\raylib\raylib
+SET COMPILER_PATH=C:\raylib\w64devkit\bin
+SET PATH=%COMPILER_PATH%;%PATH%
+
+SET CC=gcc
+SET CFLAGS=%RAYLIB_PATH%\src\raylib.rc.data -s -static -O3 -std=c99 -Wall -I%RAYLIB_PATH%\src -DPLATFORM_DESKTOP
+SET LDFLAGS=-lraylib -lopengl32 -lgdi32 -lwinmm -lshcore
+SET BUILD_PATH=./build
+SET SRC_PATH=./src
+
+:: Compile (Replace 'main.c' with your actual filename)
+%CC% -o %BUILD_PATH%/my_game.exe $(SRC_PATH)/example.c %CFLAGS% %LDFLAGS%
+
+pause
