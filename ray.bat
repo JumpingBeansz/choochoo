@@ -10,6 +10,6 @@ SET LDFLAGS=-lraylib -lopengl32 -lgdi32 -lwinmm -lshcore
 SET BUILD_PATH=./build
 
 :: Compile (Replace 'main.c' with your actual filename)
-%CC% -o %BUILD_PATH%/my_game.exe ./src/example.c %CFLAGS% %LDFLAGS%
+%CC% -o %BUILD_PATH%/my_game.exe ./src/*.c %CFLAGS% %LDFLAGS%
 
 pause

@@ -1,13 +1,24 @@
+#pragma once
 #include "raylib.h"
 
 
-// Screen size
-const int screenWidth = 800;
-const int screenHeight = 600;
+// Player (triangle)
+typedef struct {
+	Vector2 v1;
+	Vector2 v2;
+	Vector2 v3;
+	Color colour;
+} Entity_base;
 
-// Map size
-const int sceneWidth = screenWidth * 10;
-const int sceneHeight = screenHeight * 10;
 
+// Alternate implementation
+// Polar form
+typedef struct {
+	Vector2 center;
+	float rotation;
+	Color colour;
+} Entity_polar;
 
-
+Entity_base entity_polar_to_base(Entity_polar *);
+// TODO: This is helpful for saving
+//Entity_alt entity_base_to_polar(Entity_base *);
