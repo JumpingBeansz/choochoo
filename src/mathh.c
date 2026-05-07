@@ -2,12 +2,10 @@
 #include "../include/player.h"
 #include "../include/mathh.h"
 
-void rotation(Entity_base *e, float angle) {
-	Vector2 center = get_center(*e);
+void rotation(Entity_polar *e_polar) {
+	//Vector2 center = get_center(*e);
+	Entity_base e = entity_polar_to_base(e_polar);
 
-	e->v1 = Vector2Add(Vector2Rotate(Vector2Subtract(e->v1, center), angle), center);
-	e->v2 = Vector2Add(Vector2Rotate(Vector2Subtract(e->v2, center), angle), center);
-	e->v3 = Vector2Add(Vector2Rotate(Vector2Subtract(e->v3, center), angle), center);
 }
 
 Vector2 get_center(Entity_base e) {

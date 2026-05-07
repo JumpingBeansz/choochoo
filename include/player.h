@@ -15,10 +15,16 @@ typedef struct {
 // Polar form
 typedef struct {
 	Vector2 center;
-	float rotation;
+	Vector2 rotation_dir;
 	Color colour;
 } Entity_polar;
 
 Entity_base entity_polar_to_base(Entity_polar *);
 // TODO: This is helpful for saving
 //Entity_alt entity_base_to_polar(Entity_base *);
+
+void draw_entity(Entity_polar *);
+
+void move_to_mouse(Entity_polar *, float);
+
+void look_at_mouse(Entity_polar *, Vector2);
